@@ -1,0 +1,55 @@
+{{!< default}}
+
+<div class="pure-g-r">
+	<div class="pure-u-3-4">
+		<main role="main">
+
+			{{#foreach posts}}
+				<a class="sheet-post {{post_class}}" href='{{url}}'>
+					<article class="sheet-panel">
+						<header>
+							<h2 class="sheet-title sheet-post-title">{{{title}}}</h2>
+							<div class="sheet-post-meta">
+								<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+								{{#if tags}}
+									<i class="fa fa-tags sheet-post-tags"></i> {{tags}}
+								{{/if}}
+							</div>
+						</header>
+
+						<section>
+							<p class="sheet-post-excerpt">{{excerpt}}&hellip;</p>
+							<div class="sheet-read-more">READ MORE <i class="fa fa-caret-right"></i></div>
+						</section>
+					</article>
+				</a>
+			{{/foreach}}
+
+			<div class="sheet-panel">
+				{{pagination}}
+			</div>
+		</main>
+	</div>
+
+	<div class="pure-u-1-4">
+		<div class="sheet-panel sheet-sidebar">
+			{{#if @blog.logo}}
+				<img class="sheet-sidebar-logo" src="{{@blog.logo}}" alt="{{@blog.title}} Logo" />
+			{{/if}}
+			{{#if @blog.description}}
+				<p class="sheet-sidebar-desc">{{@blog.description}}</p>
+			{{/if}}
+			<div class="sheet-sidebar-subscribe">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+<a class="addthis_button_facebook"></a>
+<a class="addthis_button_twitter"></a>
+<a class="addthis_button_google_plusone_share"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5364f6dd556b5352"></script>
+<!-- AddThis Button END -->
+			</div>
+		</div>
+	</div>
+</div>
